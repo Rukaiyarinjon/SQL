@@ -55,14 +55,14 @@ if (isset($_GET['deleteid'])) {
             color: #333;
         }
 
-        a {
+        /* a {
             text-decoration: none;
             color: red;
         }
 
         a:hover {
             color: darkred;
-        }
+        } */
     </style>
 </head>
 <body>
@@ -75,6 +75,8 @@ if (isset($_GET['deleteid'])) {
         <th>Name</th>
         <th>Email</th>
         <th>Action</th>
+        <th>update</th>
+        
     </tr>
 
     <?php
@@ -88,6 +90,9 @@ if (isset($_GET['deleteid'])) {
                 <td>$email</td>
                 <td>
                     <a href='dbconnection.php?deleteid=$id'>Delete</a>
+                </td>
+                <td>
+                    <a href='edit_update.php?updateid=$id'>Edit</a>
                 </td>
               </tr>";
     }

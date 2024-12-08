@@ -80,10 +80,13 @@ if (isset($_GET['deleteid'])) {
     </tr>
 
     <?php
+    
     $db = mysqli_connect('localhost', 'root', '', 'company');
     $users = $db->query("SELECT * FROM employee_data");
+    $counter=1;
     while ($row = $users->fetch_row()) {
         list($id, $name, $email) = $row;
+        $sl=  $counter++;
         echo "<tr>
                 <td>$id</td>
                 <td>$name</td>

@@ -17,8 +17,8 @@ if (isset($_GET['deleteid'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Table</title>
-    <style>
-        body {
+    <style> 
+         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             padding: 20px;
@@ -63,7 +63,7 @@ if (isset($_GET['deleteid'])) {
         a:hover {
             color: darkred;
         } 
-    </style>
+    </style> 
 </head>
 <body>
 

@@ -55,14 +55,14 @@ if (isset($_GET['deleteid'])) {
             color: #333;
         }
 
-        /* a {
+         a {
             text-decoration: none;
             color: red;
         }
 
         a:hover {
             color: darkred;
-        } */
+        } 
     </style>
 </head>
 <body>

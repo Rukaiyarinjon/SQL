@@ -86,7 +86,7 @@ if (isset($_GET['deleteid'])) {
     $counter=1;
     while ($row = $users->fetch_row()) {
         list($id, $name, $email) = $row;
-        $sl=  $counter++;
+        $id=  $counter++;
         echo "<tr>
                 <td>$id</td>
                 <td>$name</td>

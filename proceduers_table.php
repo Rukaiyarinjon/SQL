@@ -41,23 +41,20 @@ if(isset($_POST['btnSubmit'])){
     <h3>product table</h3>
     <form>
         <table>
-            <tr>
-                <td><label for="pname">Name</label></td>
-                <td><input type="text" name="pname"/></td>
-            </tr>
+            
             <tr>
                 <td><label for="pname">Name</label></td>
                 <td><input type="text" name="price"/></td>
             </tr>
             <tr>
                 
-            <td><label for="bran">Brand</label></td>
+            <td><label for="pro">Product</label></td>
 
             <td>
-                <select name="bran" id="bran">
+                <select name="pro" id="bran">
                     <?php
-                    $bran = $db->query("select * from brand");
-                    while(list($_mid,$_nname) = $bran->fetch_row()){
+                    $pro = $db->query("select * from brand");
+                    while(list($_mid,$_nname) = $pro->fetch_row()){
                         echo "<option value='$_mid'>$_nname</option>";
                     }                    
                     ?>

@@ -85,6 +85,7 @@ if(isset($_POST['addproduct'])) {
         <table>
             <thead>
                 <tr>
+                    <th>No</th>
                     <th>Name</th>
                     <th>contact</th>
                     <th>p_name</th>
@@ -102,8 +103,9 @@ if(isset($_POST['addproduct'])) {
                     $user = $db->query("SELECT * FROM products_details");
                     $counter = 1;
                     while (list($Name,$contact,$p_name,$price) = $user->fetch_row()) {
-                        $counter++;
+                        $sl=$counter++;
                         echo "<tr>
+                            <td>$sl</td>
                             <td>$Name</td>
                             <td>$contact</td>
                             <td>$p_name</td>

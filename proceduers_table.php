@@ -4,7 +4,15 @@ $db= mysqli_connect('localhost', 'root', '', 'industry');
 if(isset($_POST['btnSubmit'])){
     $name = $_POST['nname'];
     $contact = $_POST['contact'];
-    $db->query("call add_data('$name','$contact')");
+    $db->query("call brand_add('$name','$contact')");
+}
+
+
+if(isset($_POST['addproduct'])) {
+    $nam=$_POST['p_name'];
+    $price=$_POST['prp'];
+    $br_name = $_POST['pro_b'];
+    $db->query("call product_add('$nam','$br_name','$price')");
 }
 
 
@@ -39,19 +47,23 @@ if(isset($_POST['btnSubmit'])){
     </form>
 
     <h3>product table</h3>
-    <form>
+    <form action="" method="post">
         <table>
             
             <tr>
                 <td><label for="pname">Name</label></td>
-                <td><input type="text" name="price"/></td>
+                <td><input type="text" name="p_name"/></td>
+            </tr>
+            <tr>
+                <td><label for="">PRICE</label></td>
+                <td><input type="text" name="prp" id=""></td>
             </tr>
             <tr>
                 
             <td><label for="pro">Product</label></td>
 
             <td>
-                <select name="pro" id="bran">
+                <select name="pro_b" id="bran">
                     <?php
                     $pro = $db->query("select * from brand");
                     while(list($_mid,$_nname) = $pro->fetch_row()){
@@ -68,5 +80,42 @@ if(isset($_POST['btnSubmit'])){
             </tr>
         </table>
     </form>
+    <div class="table-container">
+        <h3>product_details table</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>contact</th>
+                    <th>p_name</th>
+                    <th>price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $db= mysqli_connect('localhost', 'root', '', 'industry');
+
+                
+                if (!$db) {
+                    die("Connection failed: " . mysqli_connect_error());
+                } else {
+                    $user = $db->query("SELECT * FROM products_details");
+                    $counter = 1;
+                    while (list($Name,$contact,$p_name,$price) = $user->fetch_row()) {
+                        $counter++;
+                        echo "<tr>
+                            <td>$Name</td>
+                            <td>$contact</td>
+                            <td>$p_name</td>
+                            <td>$price</td>
+                        </tr>";
+                       
+                    }
+                }
+                
+                ?>
+            </tbody>
+        </table>
+
 </body>
 </html>

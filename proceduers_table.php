@@ -118,6 +118,8 @@ if(isset($_POST['addproduct'])) {
                 ?>
             </tbody>
         </table>
+        
+        <!-- view -->
 
 </body>
 </html>
